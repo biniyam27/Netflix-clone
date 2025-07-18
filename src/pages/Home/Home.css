@@ -55,3 +55,43 @@
 .moreCards{
     padding-left: 6%;
 }
+@media (max-width:1024px){
+    .hero .titleCard{
+        display: none;
+    }
+    .hero-btn{
+        margin-bottom: 30px;
+    }
+}
+@media (max-width:800px){
+    .hero_title{
+        padding-left: 4%;
+    }
+    .caption{
+        margin-bottom: 10px;
+        width: 40%;
+    }
+    .hero_title p{
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+    .btn img{
+        width: 20px;
+    }
+    .moreCards{
+        padding-left: 4%;
+    }
+}
+@media (max-width:500px){
+    .caption{
+        display: none;
+    }
+    .btn img{
+        width: 15px;
+    }
+    .btn{
+        padding: 4px 10px;
+        gap: 5px;
+        font-size: 10px;
+    }
+}

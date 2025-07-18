@@ -23,4 +23,33 @@
     position: absolute;
     bottom: 10px;
     right: 10px;
+    text-decoration: none;
+    color: #fff;
+}
+@media (max-width:800px){
+.titleCard{
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+.titleCard h2{
+    font-size: 20px;
+}
+.cards img{
+    width: 200px;
+}
+.cards p{
+    font-size: 12px;
+}
+}
+@media (max-width:500px){
+
+.titleCard h2{
+    font-size: 15px;
+}
+.cards img{
+    width: 165px;
+}
+.cards p{
+    font-size: 10px;
+}
 }
