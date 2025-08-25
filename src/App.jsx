@@ -13,10 +13,8 @@ function App() {
     onAuthStateChanged(auth,async(user)=>{
       if(user){
         navigate("/");
-        console.log("User is logged in", user);
       }else{
         navigate("/login");
-       console.log("No user is logged in");
       }
     })
   })
