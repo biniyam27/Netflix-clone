@@ -11,15 +11,20 @@ import { logout } from '../../Firebase'
 
 const Navbar = () => {
   const navRef=useRef();
-  useEffect(()=>{
-    window.addEventListener("scroll",()=>{
-      if(window.scrollY>=80){
-        navRef.current.classList.add("nav_black");
-      }else{
-        navRef.current.classList.remove("nav_black");
-      }
-    })
-  },[]);
+  useEffect(() => {
+  const handleScroll = () => {
+    if (!navRef.current) return;
+    if (window.scrollY >= 80) {
+      navRef.current.classList.add("nav_black");
+    } else {
+      navRef.current.classList.remove("nav_black");
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
   return (
     <div ref={navRef} className='navbar'>
       <div className="left">

@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 const TitleCard = ({title,catagory}) => {
   const cardsRef=useRef();
   const [apiData, setApiData] = useState([]);
+
 const options = {
   method: 'GET',
   headers: {
@@ -16,18 +17,24 @@ const options = {
 
 
 
+
+
   const handelscroll=(e)=>{
     e.preventDefault();
     cardsRef.current.scrollLeft+=e.deltaY;
   }
   
-useEffect(()=>{
-cardsRef.current.addEventListener("wheel",handelscroll)
-fetch(`https://api.themoviedb.org/3/movie/${catagory?catagory:"now_playing"}?language=en-US&page=1`, options)
+useEffect(() => {
+  if (!cardsRef.current) return;
+
+  cardsRef.current.addEventListener("wheel", handelscroll);
+
+ fetch(`https://api.themoviedb.org/3/movie/${catagory?catagory:"now_playing"}?language=en-US&page=1`, options)
   .then(res => res.json())
   .then(res => setApiData(res.results))
   .catch(err => console.error(err));
-},[])
+}, []);
+
 
   return (
     <div className='titleCard'>
